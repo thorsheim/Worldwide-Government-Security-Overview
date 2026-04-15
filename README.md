@@ -1,6 +1,6 @@
 # GovMap — Government Domain Security
 
-An interactive world map showing DNS and email security scores for the official government domains of ~210 countries and territories. Each domain is tested with the same checks as [mailcheck](../email-security/mailcheck/).
+An interactive world map showing DNS and email security scores for the official government domains of ~210 countries and territories. Each domain is tested with the same checks as [mailcheck](https://github.com/thorsheim/Mailcheck).
 
 Both UN member states and disputed territories are included. The rankings reflect technical findings, not political positions.
 
@@ -128,4 +128,4 @@ Countries with no map polygon (too small for Natural Earth 110m, or disputed ter
 
 Created by Per Thorsheim using Anthropic Claude. No guarantees for the correctness of found domains or their test results — there are too many factors out of my control for getting everything right. Free to use, copy, enhance and whatever. Credit is nice, not mandatory.
 
-Checks mirror the [mailcheck](../email-security/mailcheck/) methodology.
+Checks mirror the [mailcheck](https://github.com/thorsheim/Mailcheck) methodology.
