@@ -67,13 +67,23 @@ When a domain cannot be resolved the scanner prints it to the console immediatel
 
 If both sources are tried and both fail, the output shows which one was last attempted.
 
-## Viewing the map
+## Viewing the map locally
 
 ```bash
 python3 -m http.server 8080
 ```
 
 Open [http://localhost:8080](http://localhost:8080) in a browser. No build step required.
+
+## Deploying to a website
+
+The `website/` folder contains the six files needed for any static web host (`index.html`, `app.js`, `style.css`, `countries.json`, `world.geojson`, `data.json`). Upload that folder as-is — no server-side code required.
+
+After running a new scan, copy the updated files into `website/` before re-deploying:
+
+```bash
+cp data.json countries.json website/
+```
 
 ## Updating government domains
 

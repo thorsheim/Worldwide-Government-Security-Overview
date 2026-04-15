@@ -150,6 +150,21 @@ Each country entry in `data.json` includes:
 
 `gov_domain_source` is `"wikidata"` when the scanned domain came from Wikidata P856, or `"countries.json"` when it came from the static dataset. The info sidebar shows a blue provenance note for Wikidata-sourced entries.
 
+## website/ folder
+
+The `website/` directory contains the six files needed to host the map on any static web server:
+
+| File | Purpose |
+|------|---------|
+| `index.html` | App shell |
+| `app.js` | All frontend logic |
+| `style.css` | Dark theme styles |
+| `countries.json` | Static country/domain dataset |
+| `world.geojson` | Country polygons |
+| `data.json` | Scanner output (scores + check results) |
+
+After running the scanner, copy the updated `data.json` (and `countries.json` if edited) into `website/` before deploying. The Python scripts, `CLAUDE.md`, `README.md`, `fetch_world.py`, and `requirements.txt` are not needed for display.
+
 ## Toolbar note
 
 A subtitle line (`#toolbar-note`) sits between `#status-summary` and the spacer in the header:
