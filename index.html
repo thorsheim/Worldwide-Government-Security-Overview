@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Required by OpenStreetMap tile usage policy (osm.wiki/Blocked):
+       tile servers must receive a valid Referer so they can identify the
+       application making requests.  "no-referrer-when-downgrade" sends the
+       page origin as Referer for all same-security-level or upgrading
+       requests (HTTP→HTTPS and HTTPS→HTTPS) while suppressing it only on
+       HTTPS→HTTP downgrades, which never happen with OSM tiles. -->
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <title>GovMap — Government Domain Security</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── Toolbar ─────────────────────────────────────────────────────────── -->
+  <header id="toolbar">
+    <span class="brand">🌐 GovMap</span>
+    <span id="status-summary"></span>
+    <span id="toolbar-note">Official domain name for each country/territory collected primarily from Wikidata, but other sources may have been used as well.</span>
+    <div class="spacer"></div>
+    <span id="burger-prompt">Click here for more data →</span>
+    <button id="btn-burger" title="Stats &amp; Rankings">☰</button>
+  </header>
+
+  <!-- ── Map ─────────────────────────────────────────────────────────────── -->
+  <div id="map"></div>
+
+  <!-- ── Burger panel ────────────────────────────────────────────────────── -->
+  <aside id="burger-panel">
+    <div class="panel-hdr">
+      <span class="panel-title">Global Stats</span>
+      <button class="panel-close" id="burger-close" title="Close">✕</button>
+    </div>
+    <div id="burger-body">
+      <div id="stats-grid"></div>
+      <div class="grade-row" id="grade-dist"></div>
+      <div id="stats-note" class="stats-note"></div>
+      <div class="rank-section">
+        <h4>Top 10 — Best score</h4>
+        <ol id="top10"></ol>
+      </div>
+      <div class="rank-section">
+        <h4>Bottom 10 — Worst score</h4>
+        <ol id="bottom10"></ol>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── Info sidebar ────────────────────────────────────────────────────── -->
+  <aside id="info-panel">
+    <button id="info-close" title="Close">✕</button>
+    <div id="info-swatch"></div>
+    <div id="info-flag"></div>
+    <h2 id="info-name"></h2>
+    <div id="info-meta"></div>
+    <a id="info-gov-link" target="_blank" rel="noopener noreferrer"></a>
+    <div id="info-wiki-note"></div>
+    <div id="info-body"></div>
+  </aside>
+
+  <!-- ── Legend ──────────────────────────────────────────────────────────── -->
+  <div id="legend">
+    <div class="legend-title">Security Score</div>
+    <div class="legend-gradient"></div>
+    <div class="legend-labels">
+      <span>0</span><span>50</span><span>100</span>
+    </div>
+    <div class="legend-no-data">
+      <span class="no-data-swatch"></span> No data
+    </div>
+  </div>
+
+  <!-- ── Status bar ──────────────────────────────────────────────────────── -->
+  <footer id="statusbar">
+    <div class="statusbar-top">
+      <span id="status-msg"></span>
+      <span id="statusbar-meta">
+        <span id="status-scan-time"></span>
+        <span class="statusbar-sep">·</span>
+        <span id="status-version">v2026.04.15</span>
+      </span>
+    </div>
+    <div class="statusbar-credit">
+      Created by Per Thorsheim using Anthropic Claude.
+      No guarantees for the correctness of found domains or their test results —
+      there are too many factors out of my control for getting everything right.
+      Free to use, copy, enhance and whatever. Credit is nice, not mandatory.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

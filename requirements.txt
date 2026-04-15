@@ -1,0 +1,3 @@
+httpx[asyncio]>=0.27
+aiolimiter>=1.1
+tqdm>=4.66
